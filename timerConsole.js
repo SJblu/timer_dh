@@ -16,7 +16,7 @@ const timerConsole = (tempo) => {
     // funcao de temporizador regressivo
     const temporizador = setInterval(() => {
         //imprime o tempo atual
-        console.log(`. . . . . ${minutos}m ${segundos}s . . . . .`);
+        process.stdout.write(`. . . . . ${minutos}m ${segundos}s . . . . .\r`);
 
         // valida SE ainda há minutos a serem contados, reduz o contator
         // dos minutos e reseta o contador dos segundos
@@ -27,7 +27,7 @@ const timerConsole = (tempo) => {
             }, 1000);
         }
         segundos--;
-        
+
         tempoEmSegundos--; //reduz o contador principal para validar o final do tempo total
 
         //valida SE o contador principal zerar, finaliza a funcao de temporizador
